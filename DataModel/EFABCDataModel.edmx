@@ -1,0 +1,1754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ABCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="err_cat">
+          <Key>
+            <PropertyRef Name="err_cat_skey" />
+          </Key>
+          <Property Name="err_cat_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="err_cat_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="err_cat_desc" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="err_typ">
+          <Key>
+            <PropertyRef Name="err_typ_skey" />
+          </Key>
+          <Property Name="err_typ_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="err_typ_cd" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="err_typ_desc" Type="varchar" MaxLength="200" />
+          <Property Name="err_cat_skey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fldr">
+          <Key>
+            <PropertyRef Name="fldr_skey" />
+          </Key>
+          <Property Name="fldr_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="fldr_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="fldr_desc" Type="varchar" MaxLength="200" />
+          <Property Name="repstry_nm" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="inst">
+          <Key>
+            <PropertyRef Name="inst_skey" />
+          </Key>
+          <Property Name="inst_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="syst_skey" Type="int" Nullable="false" />
+          <Property Name="inst_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="inst_desc" Type="varchar" MaxLength="200" />
+          <Property Name="inst_typ" Type="varchar" MaxLength="100" />
+          <Property Name="inst_file_locn" Type="varchar" MaxLength="200" />
+          <Property Name="inst_file_nm" Type="varchar" MaxLength="100" />
+          <Property Name="inst_server_locn" Type="varchar" MaxLength="200" />
+          <Property Name="inst_db_nm" Type="varchar" MaxLength="100" />
+          <Property Name="inst_tble_nm" Type="varchar" MaxLength="200" />
+          <Property Name="inst_tble_locn" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="job_skey" />
+          </Key>
+          <Property Name="job_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="job_typ_skey" Type="int" Nullable="false" />
+          <Property Name="fldr_skey" Type="int" Nullable="false" />
+          <Property Name="job_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="job_desc" Type="varchar" MaxLength="200" />
+          <Property Name="row_cnt_thrshld" Type="int" />
+          <Property Name="norm_run_tm" Type="int" />
+          <Property Name="max_run_tm" Type="int" />
+          <Property Name="do_not_run_after" Type="int" />
+          <Property Name="job_schd_nm" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="job_det">
+          <Key>
+            <PropertyRef Name="job_det_skey" />
+          </Key>
+          <Property Name="job_det_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="job_skey" Type="int" Nullable="false" />
+          <Property Name="job_det_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="job_det_desc" Type="varchar" MaxLength="100" />
+          <Property Name="job_det_map_nm" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="job_typ">
+          <Key>
+            <PropertyRef Name="job_typ_skey" />
+          </Key>
+          <Property Name="job_typ_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="job_typ_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="job_typ_desc" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="parm_ctrl">
+          <Key>
+            <PropertyRef Name="parm_ctrl_skey" />
+          </Key>
+          <Property Name="parm_ctrl_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="job_skey" Type="int" />
+          <Property Name="job_det_skey" Type="int" />
+          <Property Name="parm_nm" Type="varchar" MaxLength="100" />
+          <Property Name="parm_desc" Type="varchar" MaxLength="200" />
+          <Property Name="static_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="parm_lst_run_val" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="run_err_typ_stats">
+          <Key>
+            <PropertyRef Name="run_err_typ_stats_skey" />
+          </Key>
+          <Property Name="run_err_typ_stats_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="run_job_stats_skey" Type="int" />
+          <Property Name="run_job_det_stats_skey" Type="int" />
+          <Property Name="err_typ_skey" Type="int" />
+        </EntityType>
+        <EntityType Name="run_job_det_stats">
+          <Key>
+            <PropertyRef Name="run_job_det_stats_skey" />
+          </Key>
+          <Property Name="run_job_det_stats_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" />
+          <Property Name="aud_upd_tmstp" Type="datetime" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="job_det_skey" Type="int" Nullable="false" />
+          <Property Name="run_job_stats_skey" Type="int" Nullable="false" />
+          <Property Name="run_strt_tm" Type="datetime" />
+          <Property Name="run_end_tm" Type="datetime" />
+          <Property Name="run_tot_exec_tm" Type="varchar" MaxLength="100" />
+          <Property Name="run_recs_read" Type="int" />
+          <Property Name="run_recs_ins" Type="int" />
+          <Property Name="run_recs_upd" Type="int" />
+          <Property Name="run_err_cnt" Type="int" />
+          <Property Name="run_status_cd" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="run_job_stats">
+          <Key>
+            <PropertyRef Name="run_job_stats_skey" />
+          </Key>
+          <Property Name="run_job_stats_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" />
+          <Property Name="job_skey" Type="int" Nullable="false" />
+          <Property Name="run_strt_tm" Type="datetime" />
+          <Property Name="run_end_tm" Type="datetime" />
+          <Property Name="run_tot_exec_tm" Type="varchar" MaxLength="100" />
+          <Property Name="run_recs_read" Type="int" />
+          <Property Name="run_recs_ins" Type="int" />
+          <Property Name="run_err_cnt" Type="int" />
+          <Property Name="run_status_cd" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="run_parm_stats">
+          <Key>
+            <PropertyRef Name="run_parm_stats_skey" />
+          </Key>
+          <Property Name="run_parm_stats_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" />
+          <Property Name="aud_ins_tmstp" Type="datetime" />
+          <Property Name="parm_ctrl_skey" Type="int" />
+          <Property Name="run_job_stats_skey" Type="int" />
+          <Property Name="run_job_det_stats_skey" Type="int" />
+          <Property Name="run_parm_val" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="run_src_stats">
+          <Key>
+            <PropertyRef Name="run_src_stats_skey" />
+          </Key>
+          <Property Name="run_src_stats_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="src_inst_skey" Type="int" />
+          <Property Name="run_job_det_stats_skey" Type="int" />
+          <Property Name="recs_prcs" Type="int" />
+        </EntityType>
+        <EntityType Name="run_tgt_stats">
+          <Key>
+            <PropertyRef Name="run_tgt_stats_skey" />
+          </Key>
+          <Property Name="run_tgt_stats_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="tgt_inst_skey" Type="int" Nullable="false" />
+          <Property Name="run_job_det_stats_skey" Type="int" Nullable="false" />
+          <Property Name="recs_prcs" Type="int" />
+          <Property Name="prcs_typ" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="src_inst">
+          <Key>
+            <PropertyRef Name="src_inst_skey" />
+          </Key>
+          <Property Name="src_inst_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="job_det_skey" Type="int" Nullable="false" />
+          <Property Name="src_inst_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="src_inst_desc" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="src_inst_xref">
+          <Key>
+            <PropertyRef Name="src_inst_xref_skey" />
+          </Key>
+          <Property Name="src_inst_xref_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="src_inst_skey" Type="int" Nullable="false" />
+          <Property Name="inst_skey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="syst">
+          <Key>
+            <PropertyRef Name="syst_skey" />
+          </Key>
+          <Property Name="syst_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="syst_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="syst_desc" Type="varchar" MaxLength="200" />
+          <Property Name="db_nm" Type="varchar" MaxLength="100" />
+          <Property Name="server_nm" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tgt_inst">
+          <Key>
+            <PropertyRef Name="tgt_inst_skey" />
+          </Key>
+          <Property Name="tgt_inst_skey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aud_ins_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_upd_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="aud_upd_tmstp" Type="datetime" Nullable="false" />
+          <Property Name="actv_ind" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="job_det_skey" Type="int" Nullable="false" />
+          <Property Name="inst_skey" Type="int" Nullable="false" />
+          <Property Name="tgt_inst_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="tgt_inst_desc" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="R_10">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="1" />
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="run_job_det_stats">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_11">
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="1" />
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Principal>
+            <Dependent Role="run_job_det_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_12">
+          <End Role="err_cat" Type="Self.err_cat" Multiplicity="1" />
+          <End Role="err_typ" Type="Self.err_typ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="err_cat">
+              <PropertyRef Name="err_cat_skey" />
+            </Principal>
+            <Dependent Role="err_typ">
+              <PropertyRef Name="err_cat_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_13">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="1" />
+          <End Role="tgt_inst" Type="Self.tgt_inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="tgt_inst">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_15">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="1" />
+          <End Role="src_inst" Type="Self.src_inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="src_inst">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_16">
+          <End Role="syst" Type="Self.syst" Multiplicity="1" />
+          <End Role="inst" Type="Self.inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="syst">
+              <PropertyRef Name="syst_skey" />
+            </Principal>
+            <Dependent Role="inst">
+              <PropertyRef Name="syst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_17">
+          <End Role="inst" Type="Self.inst" Multiplicity="1" />
+          <End Role="tgt_inst" Type="Self.tgt_inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inst">
+              <PropertyRef Name="inst_skey" />
+            </Principal>
+            <Dependent Role="tgt_inst">
+              <PropertyRef Name="inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_2">
+          <End Role="job_typ" Type="Self.job_typ" Multiplicity="1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_typ">
+              <PropertyRef Name="job_typ_skey" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="job_typ_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_20">
+          <End Role="inst" Type="Self.inst" Multiplicity="1" />
+          <End Role="src_inst_xref" Type="Self.src_inst_xref" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inst">
+              <PropertyRef Name="inst_skey" />
+            </Principal>
+            <Dependent Role="src_inst_xref">
+              <PropertyRef Name="inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_22">
+          <End Role="src_inst" Type="Self.src_inst" Multiplicity="1" />
+          <End Role="src_inst_xref" Type="Self.src_inst_xref" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="src_inst">
+              <PropertyRef Name="src_inst_skey" />
+            </Principal>
+            <Dependent Role="src_inst_xref">
+              <PropertyRef Name="src_inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_24">
+          <End Role="tgt_inst" Type="Self.tgt_inst" Multiplicity="1" />
+          <End Role="run_tgt_stats" Type="Self.run_tgt_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tgt_inst">
+              <PropertyRef Name="tgt_inst_skey" />
+            </Principal>
+            <Dependent Role="run_tgt_stats">
+              <PropertyRef Name="tgt_inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_25">
+          <End Role="src_inst" Type="Self.src_inst" Multiplicity="0..1" />
+          <End Role="run_src_stats" Type="Self.run_src_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="src_inst">
+              <PropertyRef Name="src_inst_skey" />
+            </Principal>
+            <Dependent Role="run_src_stats">
+              <PropertyRef Name="src_inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_26">
+          <End Role="parm_ctrl" Type="Self.parm_ctrl" Multiplicity="0..1" />
+          <End Role="run_parm_stats" Type="Self.run_parm_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="parm_ctrl">
+              <PropertyRef Name="parm_ctrl_skey" />
+            </Principal>
+            <Dependent Role="run_parm_stats">
+              <PropertyRef Name="parm_ctrl_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_27">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="1" />
+          <End Role="run_tgt_stats" Type="Self.run_tgt_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_tgt_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_28">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="0..1" />
+          <End Role="run_parm_stats" Type="Self.run_parm_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_parm_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_29">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="0..1" />
+          <End Role="run_src_stats" Type="Self.run_src_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_src_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_3">
+          <End Role="fldr" Type="Self.fldr" Multiplicity="1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fldr">
+              <PropertyRef Name="fldr_skey" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="fldr_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_31">
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="0..1" />
+          <End Role="run_err_typ_stats" Type="Self.run_err_typ_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Principal>
+            <Dependent Role="run_err_typ_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_32">
+          <End Role="err_typ" Type="Self.err_typ" Multiplicity="0..1" />
+          <End Role="run_err_typ_stats" Type="Self.run_err_typ_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="err_typ">
+              <PropertyRef Name="err_typ_skey" />
+            </Principal>
+            <Dependent Role="run_err_typ_stats">
+              <PropertyRef Name="err_typ_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_33">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="0..1" />
+          <End Role="run_err_typ_stats" Type="Self.run_err_typ_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_err_typ_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_34">
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="0..1" />
+          <End Role="run_parm_stats" Type="Self.run_parm_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Principal>
+            <Dependent Role="run_parm_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_35">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="0..1" />
+          <End Role="parm_ctrl" Type="Self.parm_ctrl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="parm_ctrl">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_4">
+          <End Role="job" Type="Self.job" Multiplicity="0..1" />
+          <End Role="parm_ctrl" Type="Self.parm_ctrl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="job_skey" />
+            </Principal>
+            <Dependent Role="parm_ctrl">
+              <PropertyRef Name="job_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_8">
+          <End Role="job" Type="Self.job" Multiplicity="1" />
+          <End Role="job_det" Type="Self.job_det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="job_skey" />
+            </Principal>
+            <Dependent Role="job_det">
+              <PropertyRef Name="job_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_9">
+          <End Role="job" Type="Self.job" Multiplicity="1" />
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="job_skey" />
+            </Principal>
+            <Dependent Role="run_job_stats">
+              <PropertyRef Name="job_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ABCModelStoreContainer">
+          <EntitySet Name="err_cat" EntityType="Self.err_cat" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="err_typ" EntityType="Self.err_typ" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="fldr" EntityType="Self.fldr" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="inst" EntityType="Self.inst" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="job" EntityType="Self.job" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="job_det" EntityType="Self.job_det" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="job_typ" EntityType="Self.job_typ" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="parm_ctrl" EntityType="Self.parm_ctrl" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="run_err_typ_stats" EntityType="Self.run_err_typ_stats" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="run_job_det_stats" EntityType="Self.run_job_det_stats" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="run_job_stats" EntityType="Self.run_job_stats" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="run_parm_stats" EntityType="Self.run_parm_stats" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="run_src_stats" EntityType="Self.run_src_stats" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="run_tgt_stats" EntityType="Self.run_tgt_stats" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="src_inst" EntityType="Self.src_inst" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="src_inst_xref" EntityType="Self.src_inst_xref" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="syst" EntityType="Self.syst" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <EntitySet Name="tgt_inst" EntityType="Self.tgt_inst" Schema="AUD_BAL_CNTRL" store:Type="Tables" />
+          <AssociationSet Name="R_10" Association="Self.R_10">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_11" Association="Self.R_11">
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_12" Association="Self.R_12">
+            <End Role="err_cat" EntitySet="err_cat" />
+            <End Role="err_typ" EntitySet="err_typ" />
+          </AssociationSet>
+          <AssociationSet Name="R_13" Association="Self.R_13">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="tgt_inst" EntitySet="tgt_inst" />
+          </AssociationSet>
+          <AssociationSet Name="R_15" Association="Self.R_15">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="src_inst" EntitySet="src_inst" />
+          </AssociationSet>
+          <AssociationSet Name="R_16" Association="Self.R_16">
+            <End Role="syst" EntitySet="syst" />
+            <End Role="inst" EntitySet="inst" />
+          </AssociationSet>
+          <AssociationSet Name="R_17" Association="Self.R_17">
+            <End Role="inst" EntitySet="inst" />
+            <End Role="tgt_inst" EntitySet="tgt_inst" />
+          </AssociationSet>
+          <AssociationSet Name="R_2" Association="Self.R_2">
+            <End Role="job_typ" EntitySet="job_typ" />
+            <End Role="job" EntitySet="job" />
+          </AssociationSet>
+          <AssociationSet Name="R_20" Association="Self.R_20">
+            <End Role="inst" EntitySet="inst" />
+            <End Role="src_inst_xref" EntitySet="src_inst_xref" />
+          </AssociationSet>
+          <AssociationSet Name="R_22" Association="Self.R_22">
+            <End Role="src_inst" EntitySet="src_inst" />
+            <End Role="src_inst_xref" EntitySet="src_inst_xref" />
+          </AssociationSet>
+          <AssociationSet Name="R_24" Association="Self.R_24">
+            <End Role="tgt_inst" EntitySet="tgt_inst" />
+            <End Role="run_tgt_stats" EntitySet="run_tgt_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_25" Association="Self.R_25">
+            <End Role="src_inst" EntitySet="src_inst" />
+            <End Role="run_src_stats" EntitySet="run_src_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_26" Association="Self.R_26">
+            <End Role="parm_ctrl" EntitySet="parm_ctrl" />
+            <End Role="run_parm_stats" EntitySet="run_parm_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_27" Association="Self.R_27">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_tgt_stats" EntitySet="run_tgt_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_28" Association="Self.R_28">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_parm_stats" EntitySet="run_parm_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_29" Association="Self.R_29">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_src_stats" EntitySet="run_src_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_3" Association="Self.R_3">
+            <End Role="fldr" EntitySet="fldr" />
+            <End Role="job" EntitySet="job" />
+          </AssociationSet>
+          <AssociationSet Name="R_31" Association="Self.R_31">
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+            <End Role="run_err_typ_stats" EntitySet="run_err_typ_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_32" Association="Self.R_32">
+            <End Role="err_typ" EntitySet="err_typ" />
+            <End Role="run_err_typ_stats" EntitySet="run_err_typ_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_33" Association="Self.R_33">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_err_typ_stats" EntitySet="run_err_typ_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_34" Association="Self.R_34">
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+            <End Role="run_parm_stats" EntitySet="run_parm_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_35" Association="Self.R_35">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="parm_ctrl" EntitySet="parm_ctrl" />
+          </AssociationSet>
+          <AssociationSet Name="R_4" Association="Self.R_4">
+            <End Role="job" EntitySet="job" />
+            <End Role="parm_ctrl" EntitySet="parm_ctrl" />
+          </AssociationSet>
+          <AssociationSet Name="R_8" Association="Self.R_8">
+            <End Role="job" EntitySet="job" />
+            <End Role="job_det" EntitySet="job_det" />
+          </AssociationSet>
+          <AssociationSet Name="R_9" Association="Self.R_9">
+            <End Role="job" EntitySet="job" />
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ABCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="err_cat">
+          <Key>
+            <PropertyRef Name="err_cat_skey" />
+          </Key>
+          <Property Name="err_cat_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="err_cat_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="err_cat_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="err_typ" Relationship="Self.R_12" FromRole="err_cat" ToRole="err_typ" />
+        </EntityType>
+        <EntityType Name="err_typ">
+          <Key>
+            <PropertyRef Name="err_typ_skey" />
+          </Key>
+          <Property Name="err_typ_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="err_typ_cd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="err_typ_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="err_cat_skey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="err_cat" Relationship="Self.R_12" FromRole="err_typ" ToRole="err_cat" />
+          <NavigationProperty Name="run_err_typ_stats" Relationship="Self.R_32" FromRole="err_typ" ToRole="run_err_typ_stats" />
+        </EntityType>
+        <EntityType Name="fldr">
+          <Key>
+            <PropertyRef Name="fldr_skey" />
+          </Key>
+          <Property Name="fldr_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="fldr_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fldr_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="repstry_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobs" Relationship="Self.R_3" FromRole="fldr" ToRole="job" />
+        </EntityType>
+        <EntityType Name="inst">
+          <Key>
+            <PropertyRef Name="inst_skey" />
+          </Key>
+          <Property Name="inst_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="syst_skey" Type="Int32" Nullable="false" />
+          <Property Name="inst_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="inst_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="inst_typ" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="inst_file_locn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="inst_file_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="inst_server_locn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="inst_db_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="inst_tble_nm" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="inst_tble_locn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="syst" Relationship="Self.R_16" FromRole="inst" ToRole="syst" />
+          <NavigationProperty Name="tgt_inst" Relationship="Self.R_17" FromRole="inst" ToRole="tgt_inst" />
+          <NavigationProperty Name="src_inst_xref" Relationship="Self.R_20" FromRole="inst" ToRole="src_inst_xref" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="job_skey" />
+          </Key>
+          <Property Name="job_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="job_typ_skey" Type="Int32" Nullable="false" />
+          <Property Name="fldr_skey" Type="Int32" Nullable="false" />
+          <Property Name="job_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="job_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="row_cnt_thrshld" Type="Int32" />
+          <Property Name="norm_run_tm" Type="Int32" />
+          <Property Name="max_run_tm" Type="Int32" />
+          <Property Name="do_not_run_after" Type="Int32" />
+          <Property Name="job_schd_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="fldr" Relationship="Self.R_3" FromRole="job" ToRole="fldr" />
+          <NavigationProperty Name="job_typ" Relationship="Self.R_2" FromRole="job" ToRole="job_typ" />
+          <NavigationProperty Name="parm_ctrl" Relationship="Self.R_4" FromRole="job" ToRole="parm_ctrl" />
+          <NavigationProperty Name="job_det" Relationship="Self.R_8" FromRole="job" ToRole="job_det" />
+          <NavigationProperty Name="run_job_stats" Relationship="Self.R_9" FromRole="job" ToRole="run_job_stats" />
+        </EntityType>
+        <EntityType Name="job_det">
+          <Key>
+            <PropertyRef Name="job_det_skey" />
+          </Key>
+          <Property Name="job_det_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="job_skey" Type="Int32" Nullable="false" />
+          <Property Name="job_det_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="job_det_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="job_det_map_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="job" Relationship="Self.R_8" FromRole="job_det" ToRole="job" />
+          <NavigationProperty Name="run_job_det_stats" Relationship="Self.R_10" FromRole="job_det" ToRole="run_job_det_stats" />
+          <NavigationProperty Name="tgt_inst" Relationship="Self.R_13" FromRole="job_det" ToRole="tgt_inst" />
+          <NavigationProperty Name="src_inst" Relationship="Self.R_15" FromRole="job_det" ToRole="src_inst" />
+          <NavigationProperty Name="parm_ctrl" Relationship="Self.R_35" FromRole="job_det" ToRole="parm_ctrl" />
+        </EntityType>
+        <EntityType Name="job_typ">
+          <Key>
+            <PropertyRef Name="job_typ_skey" />
+          </Key>
+          <Property Name="job_typ_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="job_typ_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="job_typ_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobs" Relationship="Self.R_2" FromRole="job_typ" ToRole="job" />
+        </EntityType>
+        <EntityType Name="parm_ctrl">
+          <Key>
+            <PropertyRef Name="parm_ctrl_skey" />
+          </Key>
+          <Property Name="parm_ctrl_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="job_skey" Type="Int32" />
+          <Property Name="job_det_skey" Type="Int32" />
+          <Property Name="parm_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="parm_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="static_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="parm_lst_run_val" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="job" Relationship="Self.R_4" FromRole="parm_ctrl" ToRole="job" />
+          <NavigationProperty Name="job_det" Relationship="Self.R_35" FromRole="parm_ctrl" ToRole="job_det" />
+          <NavigationProperty Name="run_parm_stats" Relationship="Self.R_26" FromRole="parm_ctrl" ToRole="run_parm_stats" />
+        </EntityType>
+        <EntityType Name="run_err_typ_stats">
+          <Key>
+            <PropertyRef Name="run_err_typ_stats_skey" />
+          </Key>
+          <Property Name="run_err_typ_stats_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="run_job_stats_skey" Type="Int32" />
+          <Property Name="run_job_det_stats_skey" Type="Int32" />
+          <Property Name="err_typ_skey" Type="Int32" />
+          <NavigationProperty Name="err_typ" Relationship="Self.R_32" FromRole="run_err_typ_stats" ToRole="err_typ" />
+          <NavigationProperty Name="run_job_stats" Relationship="Self.R_31" FromRole="run_err_typ_stats" ToRole="run_job_stats" />
+          <NavigationProperty Name="run_job_det_stats" Relationship="Self.R_33" FromRole="run_err_typ_stats" ToRole="run_job_det_stats" />
+        </EntityType>
+        <EntityType Name="run_job_det_stats">
+          <Key>
+            <PropertyRef Name="run_job_det_stats_skey" />
+          </Key>
+          <Property Name="run_job_det_stats_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Precision="3" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="job_det_skey" Type="Int32" Nullable="false" />
+          <Property Name="run_job_stats_skey" Type="Int32" Nullable="false" />
+          <Property Name="run_strt_tm" Type="DateTime" Precision="3" />
+          <Property Name="run_end_tm" Type="DateTime" Precision="3" />
+          <Property Name="run_tot_exec_tm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="run_recs_read" Type="Int32" />
+          <Property Name="run_recs_ins" Type="Int32" />
+          <Property Name="run_recs_upd" Type="Int32" />
+          <Property Name="run_err_cnt" Type="Int32" />
+          <Property Name="run_status_cd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="job_det" Relationship="Self.R_10" FromRole="run_job_det_stats" ToRole="job_det" />
+          <NavigationProperty Name="run_err_typ_stats" Relationship="Self.R_33" FromRole="run_job_det_stats" ToRole="run_err_typ_stats" />
+          <NavigationProperty Name="run_job_stats" Relationship="Self.R_11" FromRole="run_job_det_stats" ToRole="run_job_stats" />
+          <NavigationProperty Name="run_tgt_stats" Relationship="Self.R_27" FromRole="run_job_det_stats" ToRole="run_tgt_stats" />
+          <NavigationProperty Name="run_parm_stats" Relationship="Self.R_28" FromRole="run_job_det_stats" ToRole="run_parm_stats" />
+          <NavigationProperty Name="run_src_stats" Relationship="Self.R_29" FromRole="run_job_det_stats" ToRole="run_src_stats" />
+        </EntityType>
+        <EntityType Name="run_job_stats">
+          <Key>
+            <PropertyRef Name="run_job_stats_skey" />
+          </Key>
+          <Property Name="run_job_stats_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Precision="3" />
+          <Property Name="job_skey" Type="Int32" Nullable="false" />
+          <Property Name="run_strt_tm" Type="DateTime" Precision="3" />
+          <Property Name="run_end_tm" Type="DateTime" Precision="3" />
+          <Property Name="run_tot_exec_tm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="run_recs_read" Type="Int32" />
+          <Property Name="run_recs_ins" Type="Int32" />
+          <Property Name="run_err_cnt" Type="Int32" />
+          <Property Name="run_status_cd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="job" Relationship="Self.R_9" FromRole="run_job_stats" ToRole="job" />
+          <NavigationProperty Name="run_err_typ_stats" Relationship="Self.R_31" FromRole="run_job_stats" ToRole="run_err_typ_stats" />
+          <NavigationProperty Name="run_job_det_stats" Relationship="Self.R_11" FromRole="run_job_stats" ToRole="run_job_det_stats" />
+          <NavigationProperty Name="run_parm_stats" Relationship="Self.R_34" FromRole="run_job_stats" ToRole="run_parm_stats" />
+        </EntityType>
+        <EntityType Name="run_parm_stats">
+          <Key>
+            <PropertyRef Name="run_parm_stats_skey" />
+          </Key>
+          <Property Name="run_parm_stats_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Precision="3" />
+          <Property Name="parm_ctrl_skey" Type="Int32" />
+          <Property Name="run_job_stats_skey" Type="Int32" />
+          <Property Name="run_job_det_stats_skey" Type="Int32" />
+          <Property Name="run_parm_val" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="parm_ctrl" Relationship="Self.R_26" FromRole="run_parm_stats" ToRole="parm_ctrl" />
+          <NavigationProperty Name="run_job_det_stats" Relationship="Self.R_28" FromRole="run_parm_stats" ToRole="run_job_det_stats" />
+          <NavigationProperty Name="run_job_stats" Relationship="Self.R_34" FromRole="run_parm_stats" ToRole="run_job_stats" />
+        </EntityType>
+        <EntityType Name="run_src_stats">
+          <Key>
+            <PropertyRef Name="run_src_stats_skey" />
+          </Key>
+          <Property Name="run_src_stats_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="src_inst_skey" Type="Int32" />
+          <Property Name="run_job_det_stats_skey" Type="Int32" />
+          <Property Name="recs_prcs" Type="Int32" />
+          <NavigationProperty Name="run_job_det_stats" Relationship="Self.R_29" FromRole="run_src_stats" ToRole="run_job_det_stats" />
+          <NavigationProperty Name="src_inst" Relationship="Self.R_25" FromRole="run_src_stats" ToRole="src_inst" />
+        </EntityType>
+        <EntityType Name="run_tgt_stats">
+          <Key>
+            <PropertyRef Name="run_tgt_stats_skey" />
+          </Key>
+          <Property Name="run_tgt_stats_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tgt_inst_skey" Type="Int32" Nullable="false" />
+          <Property Name="run_job_det_stats_skey" Type="Int32" Nullable="false" />
+          <Property Name="recs_prcs" Type="Int32" />
+          <Property Name="prcs_typ" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="run_job_det_stats" Relationship="Self.R_27" FromRole="run_tgt_stats" ToRole="run_job_det_stats" />
+          <NavigationProperty Name="tgt_inst" Relationship="Self.R_24" FromRole="run_tgt_stats" ToRole="tgt_inst" />
+        </EntityType>
+        <EntityType Name="src_inst">
+          <Key>
+            <PropertyRef Name="src_inst_skey" />
+          </Key>
+          <Property Name="src_inst_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="job_det_skey" Type="Int32" Nullable="false" />
+          <Property Name="src_inst_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="src_inst_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="job_det" Relationship="Self.R_15" FromRole="src_inst" ToRole="job_det" />
+          <NavigationProperty Name="run_src_stats" Relationship="Self.R_25" FromRole="src_inst" ToRole="run_src_stats" />
+          <NavigationProperty Name="src_inst_xref" Relationship="Self.R_22" FromRole="src_inst" ToRole="src_inst_xref" />
+        </EntityType>
+        <EntityType Name="src_inst_xref">
+          <Key>
+            <PropertyRef Name="src_inst_xref_skey" />
+          </Key>
+          <Property Name="src_inst_xref_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="src_inst_skey" Type="Int32" Nullable="false" />
+          <Property Name="inst_skey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="inst" Relationship="Self.R_20" FromRole="src_inst_xref" ToRole="inst" />
+          <NavigationProperty Name="src_inst" Relationship="Self.R_22" FromRole="src_inst_xref" ToRole="src_inst" />
+        </EntityType>
+        <EntityType Name="syst">
+          <Key>
+            <PropertyRef Name="syst_skey" />
+          </Key>
+          <Property Name="syst_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="syst_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="syst_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="db_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="server_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="insts" Relationship="Self.R_16" FromRole="syst" ToRole="inst" />
+        </EntityType>
+        <EntityType Name="tgt_inst">
+          <Key>
+            <PropertyRef Name="tgt_inst_skey" />
+          </Key>
+          <Property Name="tgt_inst_skey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aud_ins_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_upd_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aud_ins_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="aud_upd_tmstp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="actv_ind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="job_det_skey" Type="Int32" Nullable="false" />
+          <Property Name="inst_skey" Type="Int32" Nullable="false" />
+          <Property Name="tgt_inst_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tgt_inst_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inst" Relationship="Self.R_17" FromRole="tgt_inst" ToRole="inst" />
+          <NavigationProperty Name="job_det" Relationship="Self.R_13" FromRole="tgt_inst" ToRole="job_det" />
+          <NavigationProperty Name="run_tgt_stats" Relationship="Self.R_24" FromRole="tgt_inst" ToRole="run_tgt_stats" />
+        </EntityType>
+        <Association Name="R_12">
+          <End Role="err_cat" Type="Self.err_cat" Multiplicity="1" />
+          <End Role="err_typ" Type="Self.err_typ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="err_cat">
+              <PropertyRef Name="err_cat_skey" />
+            </Principal>
+            <Dependent Role="err_typ">
+              <PropertyRef Name="err_cat_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_32">
+          <End Role="err_typ" Type="Self.err_typ" Multiplicity="0..1" />
+          <End Role="run_err_typ_stats" Type="Self.run_err_typ_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="err_typ">
+              <PropertyRef Name="err_typ_skey" />
+            </Principal>
+            <Dependent Role="run_err_typ_stats">
+              <PropertyRef Name="err_typ_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_3">
+          <End Role="fldr" Type="Self.fldr" Multiplicity="1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fldr">
+              <PropertyRef Name="fldr_skey" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="fldr_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_16">
+          <End Role="syst" Type="Self.syst" Multiplicity="1" />
+          <End Role="inst" Type="Self.inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="syst">
+              <PropertyRef Name="syst_skey" />
+            </Principal>
+            <Dependent Role="inst">
+              <PropertyRef Name="syst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_17">
+          <End Role="inst" Type="Self.inst" Multiplicity="1" />
+          <End Role="tgt_inst" Type="Self.tgt_inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inst">
+              <PropertyRef Name="inst_skey" />
+            </Principal>
+            <Dependent Role="tgt_inst">
+              <PropertyRef Name="inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_20">
+          <End Role="inst" Type="Self.inst" Multiplicity="1" />
+          <End Role="src_inst_xref" Type="Self.src_inst_xref" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inst">
+              <PropertyRef Name="inst_skey" />
+            </Principal>
+            <Dependent Role="src_inst_xref">
+              <PropertyRef Name="inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_2">
+          <End Role="job_typ" Type="Self.job_typ" Multiplicity="1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_typ">
+              <PropertyRef Name="job_typ_skey" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="job_typ_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_4">
+          <End Role="job" Type="Self.job" Multiplicity="0..1" />
+          <End Role="parm_ctrl" Type="Self.parm_ctrl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="job_skey" />
+            </Principal>
+            <Dependent Role="parm_ctrl">
+              <PropertyRef Name="job_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_8">
+          <End Role="job" Type="Self.job" Multiplicity="1" />
+          <End Role="job_det" Type="Self.job_det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="job_skey" />
+            </Principal>
+            <Dependent Role="job_det">
+              <PropertyRef Name="job_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_9">
+          <End Role="job" Type="Self.job" Multiplicity="1" />
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="job_skey" />
+            </Principal>
+            <Dependent Role="run_job_stats">
+              <PropertyRef Name="job_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_10">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="1" />
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="run_job_det_stats">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_13">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="1" />
+          <End Role="tgt_inst" Type="Self.tgt_inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="tgt_inst">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_15">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="1" />
+          <End Role="src_inst" Type="Self.src_inst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="src_inst">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_35">
+          <End Role="job_det" Type="Self.job_det" Multiplicity="0..1" />
+          <End Role="parm_ctrl" Type="Self.parm_ctrl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job_det">
+              <PropertyRef Name="job_det_skey" />
+            </Principal>
+            <Dependent Role="parm_ctrl">
+              <PropertyRef Name="job_det_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_26">
+          <End Role="parm_ctrl" Type="Self.parm_ctrl" Multiplicity="0..1" />
+          <End Role="run_parm_stats" Type="Self.run_parm_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="parm_ctrl">
+              <PropertyRef Name="parm_ctrl_skey" />
+            </Principal>
+            <Dependent Role="run_parm_stats">
+              <PropertyRef Name="parm_ctrl_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_31">
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="0..1" />
+          <End Role="run_err_typ_stats" Type="Self.run_err_typ_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Principal>
+            <Dependent Role="run_err_typ_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_33">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="0..1" />
+          <End Role="run_err_typ_stats" Type="Self.run_err_typ_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_err_typ_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_11">
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="1" />
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Principal>
+            <Dependent Role="run_job_det_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_27">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="1" />
+          <End Role="run_tgt_stats" Type="Self.run_tgt_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_tgt_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_28">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="0..1" />
+          <End Role="run_parm_stats" Type="Self.run_parm_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_parm_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_29">
+          <End Role="run_job_det_stats" Type="Self.run_job_det_stats" Multiplicity="0..1" />
+          <End Role="run_src_stats" Type="Self.run_src_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_det_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Principal>
+            <Dependent Role="run_src_stats">
+              <PropertyRef Name="run_job_det_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_34">
+          <End Role="run_job_stats" Type="Self.run_job_stats" Multiplicity="0..1" />
+          <End Role="run_parm_stats" Type="Self.run_parm_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="run_job_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Principal>
+            <Dependent Role="run_parm_stats">
+              <PropertyRef Name="run_job_stats_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_25">
+          <End Role="src_inst" Type="Self.src_inst" Multiplicity="0..1" />
+          <End Role="run_src_stats" Type="Self.run_src_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="src_inst">
+              <PropertyRef Name="src_inst_skey" />
+            </Principal>
+            <Dependent Role="run_src_stats">
+              <PropertyRef Name="src_inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_24">
+          <End Role="tgt_inst" Type="Self.tgt_inst" Multiplicity="1" />
+          <End Role="run_tgt_stats" Type="Self.run_tgt_stats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tgt_inst">
+              <PropertyRef Name="tgt_inst_skey" />
+            </Principal>
+            <Dependent Role="run_tgt_stats">
+              <PropertyRef Name="tgt_inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_22">
+          <End Role="src_inst" Type="Self.src_inst" Multiplicity="1" />
+          <End Role="src_inst_xref" Type="Self.src_inst_xref" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="src_inst">
+              <PropertyRef Name="src_inst_skey" />
+            </Principal>
+            <Dependent Role="src_inst_xref">
+              <PropertyRef Name="src_inst_skey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ABCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="err_cat" EntityType="Self.err_cat" />
+          <EntitySet Name="err_typ" EntityType="Self.err_typ" />
+          <EntitySet Name="fldrs" EntityType="Self.fldr" />
+          <EntitySet Name="insts" EntityType="Self.inst" />
+          <EntitySet Name="jobs" EntityType="Self.job" />
+          <EntitySet Name="job_det" EntityType="Self.job_det" />
+          <EntitySet Name="job_typ" EntityType="Self.job_typ" />
+          <EntitySet Name="parm_ctrl" EntityType="Self.parm_ctrl" />
+          <EntitySet Name="run_err_typ_stats" EntityType="Self.run_err_typ_stats" />
+          <EntitySet Name="run_job_det_stats" EntityType="Self.run_job_det_stats" />
+          <EntitySet Name="run_job_stats" EntityType="Self.run_job_stats" />
+          <EntitySet Name="run_parm_stats" EntityType="Self.run_parm_stats" />
+          <EntitySet Name="run_src_stats" EntityType="Self.run_src_stats" />
+          <EntitySet Name="run_tgt_stats" EntityType="Self.run_tgt_stats" />
+          <EntitySet Name="src_inst" EntityType="Self.src_inst" />
+          <EntitySet Name="src_inst_xref" EntityType="Self.src_inst_xref" />
+          <EntitySet Name="systs" EntityType="Self.syst" />
+          <EntitySet Name="tgt_inst" EntityType="Self.tgt_inst" />
+          <AssociationSet Name="R_12" Association="Self.R_12">
+            <End Role="err_cat" EntitySet="err_cat" />
+            <End Role="err_typ" EntitySet="err_typ" />
+          </AssociationSet>
+          <AssociationSet Name="R_32" Association="Self.R_32">
+            <End Role="err_typ" EntitySet="err_typ" />
+            <End Role="run_err_typ_stats" EntitySet="run_err_typ_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_3" Association="Self.R_3">
+            <End Role="fldr" EntitySet="fldrs" />
+            <End Role="job" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="R_16" Association="Self.R_16">
+            <End Role="syst" EntitySet="systs" />
+            <End Role="inst" EntitySet="insts" />
+          </AssociationSet>
+          <AssociationSet Name="R_17" Association="Self.R_17">
+            <End Role="inst" EntitySet="insts" />
+            <End Role="tgt_inst" EntitySet="tgt_inst" />
+          </AssociationSet>
+          <AssociationSet Name="R_20" Association="Self.R_20">
+            <End Role="inst" EntitySet="insts" />
+            <End Role="src_inst_xref" EntitySet="src_inst_xref" />
+          </AssociationSet>
+          <AssociationSet Name="R_2" Association="Self.R_2">
+            <End Role="job_typ" EntitySet="job_typ" />
+            <End Role="job" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="R_4" Association="Self.R_4">
+            <End Role="job" EntitySet="jobs" />
+            <End Role="parm_ctrl" EntitySet="parm_ctrl" />
+          </AssociationSet>
+          <AssociationSet Name="R_8" Association="Self.R_8">
+            <End Role="job" EntitySet="jobs" />
+            <End Role="job_det" EntitySet="job_det" />
+          </AssociationSet>
+          <AssociationSet Name="R_9" Association="Self.R_9">
+            <End Role="job" EntitySet="jobs" />
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_10" Association="Self.R_10">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_13" Association="Self.R_13">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="tgt_inst" EntitySet="tgt_inst" />
+          </AssociationSet>
+          <AssociationSet Name="R_15" Association="Self.R_15">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="src_inst" EntitySet="src_inst" />
+          </AssociationSet>
+          <AssociationSet Name="R_35" Association="Self.R_35">
+            <End Role="job_det" EntitySet="job_det" />
+            <End Role="parm_ctrl" EntitySet="parm_ctrl" />
+          </AssociationSet>
+          <AssociationSet Name="R_26" Association="Self.R_26">
+            <End Role="parm_ctrl" EntitySet="parm_ctrl" />
+            <End Role="run_parm_stats" EntitySet="run_parm_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_31" Association="Self.R_31">
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+            <End Role="run_err_typ_stats" EntitySet="run_err_typ_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_33" Association="Self.R_33">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_err_typ_stats" EntitySet="run_err_typ_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_11" Association="Self.R_11">
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_27" Association="Self.R_27">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_tgt_stats" EntitySet="run_tgt_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_28" Association="Self.R_28">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_parm_stats" EntitySet="run_parm_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_29" Association="Self.R_29">
+            <End Role="run_job_det_stats" EntitySet="run_job_det_stats" />
+            <End Role="run_src_stats" EntitySet="run_src_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_34" Association="Self.R_34">
+            <End Role="run_job_stats" EntitySet="run_job_stats" />
+            <End Role="run_parm_stats" EntitySet="run_parm_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_25" Association="Self.R_25">
+            <End Role="src_inst" EntitySet="src_inst" />
+            <End Role="run_src_stats" EntitySet="run_src_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_24" Association="Self.R_24">
+            <End Role="tgt_inst" EntitySet="tgt_inst" />
+            <End Role="run_tgt_stats" EntitySet="run_tgt_stats" />
+          </AssociationSet>
+          <AssociationSet Name="R_22" Association="Self.R_22">
+            <End Role="src_inst" EntitySet="src_inst" />
+            <End Role="src_inst_xref" EntitySet="src_inst_xref" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ABCModelStoreContainer" CdmEntityContainer="ABCEntities">
+          <EntitySetMapping Name="err_cat">
+            <EntityTypeMapping TypeName="ABCModel.err_cat">
+              <MappingFragment StoreEntitySet="err_cat">
+                <ScalarProperty Name="err_cat_skey" ColumnName="err_cat_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="err_cat_nm" ColumnName="err_cat_nm" />
+                <ScalarProperty Name="err_cat_desc" ColumnName="err_cat_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="err_typ">
+            <EntityTypeMapping TypeName="ABCModel.err_typ">
+              <MappingFragment StoreEntitySet="err_typ">
+                <ScalarProperty Name="err_typ_skey" ColumnName="err_typ_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="err_typ_cd" ColumnName="err_typ_cd" />
+                <ScalarProperty Name="err_typ_desc" ColumnName="err_typ_desc" />
+                <ScalarProperty Name="err_cat_skey" ColumnName="err_cat_skey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fldrs">
+            <EntityTypeMapping TypeName="ABCModel.fldr">
+              <MappingFragment StoreEntitySet="fldr">
+                <ScalarProperty Name="fldr_skey" ColumnName="fldr_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="fldr_nm" ColumnName="fldr_nm" />
+                <ScalarProperty Name="fldr_desc" ColumnName="fldr_desc" />
+                <ScalarProperty Name="repstry_nm" ColumnName="repstry_nm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="insts">
+            <EntityTypeMapping TypeName="ABCModel.inst">
+              <MappingFragment StoreEntitySet="inst">
+                <ScalarProperty Name="inst_skey" ColumnName="inst_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="syst_skey" ColumnName="syst_skey" />
+                <ScalarProperty Name="inst_nm" ColumnName="inst_nm" />
+                <ScalarProperty Name="inst_desc" ColumnName="inst_desc" />
+                <ScalarProperty Name="inst_typ" ColumnName="inst_typ" />
+                <ScalarProperty Name="inst_file_locn" ColumnName="inst_file_locn" />
+                <ScalarProperty Name="inst_file_nm" ColumnName="inst_file_nm" />
+                <ScalarProperty Name="inst_server_locn" ColumnName="inst_server_locn" />
+                <ScalarProperty Name="inst_db_nm" ColumnName="inst_db_nm" />
+                <ScalarProperty Name="inst_tble_nm" ColumnName="inst_tble_nm" />
+                <ScalarProperty Name="inst_tble_locn" ColumnName="inst_tble_locn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobs">
+            <EntityTypeMapping TypeName="ABCModel.job">
+              <MappingFragment StoreEntitySet="job">
+                <ScalarProperty Name="job_skey" ColumnName="job_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="job_typ_skey" ColumnName="job_typ_skey" />
+                <ScalarProperty Name="fldr_skey" ColumnName="fldr_skey" />
+                <ScalarProperty Name="job_nm" ColumnName="job_nm" />
+                <ScalarProperty Name="job_desc" ColumnName="job_desc" />
+                <ScalarProperty Name="row_cnt_thrshld" ColumnName="row_cnt_thrshld" />
+                <ScalarProperty Name="norm_run_tm" ColumnName="norm_run_tm" />
+                <ScalarProperty Name="max_run_tm" ColumnName="max_run_tm" />
+                <ScalarProperty Name="do_not_run_after" ColumnName="do_not_run_after" />
+                <ScalarProperty Name="job_schd_nm" ColumnName="job_schd_nm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="job_det">
+            <EntityTypeMapping TypeName="ABCModel.job_det">
+              <MappingFragment StoreEntitySet="job_det">
+                <ScalarProperty Name="job_det_skey" ColumnName="job_det_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="job_skey" ColumnName="job_skey" />
+                <ScalarProperty Name="job_det_nm" ColumnName="job_det_nm" />
+                <ScalarProperty Name="job_det_desc" ColumnName="job_det_desc" />
+                <ScalarProperty Name="job_det_map_nm" ColumnName="job_det_map_nm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="job_typ">
+            <EntityTypeMapping TypeName="ABCModel.job_typ">
+              <MappingFragment StoreEntitySet="job_typ">
+                <ScalarProperty Name="job_typ_skey" ColumnName="job_typ_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="job_typ_nm" ColumnName="job_typ_nm" />
+                <ScalarProperty Name="job_typ_desc" ColumnName="job_typ_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="parm_ctrl">
+            <EntityTypeMapping TypeName="ABCModel.parm_ctrl">
+              <MappingFragment StoreEntitySet="parm_ctrl">
+                <ScalarProperty Name="parm_ctrl_skey" ColumnName="parm_ctrl_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="job_skey" ColumnName="job_skey" />
+                <ScalarProperty Name="job_det_skey" ColumnName="job_det_skey" />
+                <ScalarProperty Name="parm_nm" ColumnName="parm_nm" />
+                <ScalarProperty Name="parm_desc" ColumnName="parm_desc" />
+                <ScalarProperty Name="static_ind" ColumnName="static_ind" />
+                <ScalarProperty Name="parm_lst_run_val" ColumnName="parm_lst_run_val" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="run_err_typ_stats">
+            <EntityTypeMapping TypeName="ABCModel.run_err_typ_stats">
+              <MappingFragment StoreEntitySet="run_err_typ_stats">
+                <ScalarProperty Name="run_err_typ_stats_skey" ColumnName="run_err_typ_stats_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="run_job_stats_skey" ColumnName="run_job_stats_skey" />
+                <ScalarProperty Name="run_job_det_stats_skey" ColumnName="run_job_det_stats_skey" />
+                <ScalarProperty Name="err_typ_skey" ColumnName="err_typ_skey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="run_job_det_stats">
+            <EntityTypeMapping TypeName="ABCModel.run_job_det_stats">
+              <MappingFragment StoreEntitySet="run_job_det_stats">
+                <ScalarProperty Name="run_job_det_stats_skey" ColumnName="run_job_det_stats_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="job_det_skey" ColumnName="job_det_skey" />
+                <ScalarProperty Name="run_job_stats_skey" ColumnName="run_job_stats_skey" />
+                <ScalarProperty Name="run_strt_tm" ColumnName="run_strt_tm" />
+                <ScalarProperty Name="run_end_tm" ColumnName="run_end_tm" />
+                <ScalarProperty Name="run_tot_exec_tm" ColumnName="run_tot_exec_tm" />
+                <ScalarProperty Name="run_recs_read" ColumnName="run_recs_read" />
+                <ScalarProperty Name="run_recs_ins" ColumnName="run_recs_ins" />
+                <ScalarProperty Name="run_recs_upd" ColumnName="run_recs_upd" />
+                <ScalarProperty Name="run_err_cnt" ColumnName="run_err_cnt" />
+                <ScalarProperty Name="run_status_cd" ColumnName="run_status_cd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="run_job_stats">
+            <EntityTypeMapping TypeName="ABCModel.run_job_stats">
+              <MappingFragment StoreEntitySet="run_job_stats">
+                <ScalarProperty Name="run_job_stats_skey" ColumnName="run_job_stats_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="job_skey" ColumnName="job_skey" />
+                <ScalarProperty Name="run_strt_tm" ColumnName="run_strt_tm" />
+                <ScalarProperty Name="run_end_tm" ColumnName="run_end_tm" />
+                <ScalarProperty Name="run_tot_exec_tm" ColumnName="run_tot_exec_tm" />
+                <ScalarProperty Name="run_recs_read" ColumnName="run_recs_read" />
+                <ScalarProperty Name="run_recs_ins" ColumnName="run_recs_ins" />
+                <ScalarProperty Name="run_err_cnt" ColumnName="run_err_cnt" />
+                <ScalarProperty Name="run_status_cd" ColumnName="run_status_cd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="run_parm_stats">
+            <EntityTypeMapping TypeName="ABCModel.run_parm_stats">
+              <MappingFragment StoreEntitySet="run_parm_stats">
+                <ScalarProperty Name="run_parm_stats_skey" ColumnName="run_parm_stats_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="parm_ctrl_skey" ColumnName="parm_ctrl_skey" />
+                <ScalarProperty Name="run_job_stats_skey" ColumnName="run_job_stats_skey" />
+                <ScalarProperty Name="run_job_det_stats_skey" ColumnName="run_job_det_stats_skey" />
+                <ScalarProperty Name="run_parm_val" ColumnName="run_parm_val" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="run_src_stats">
+            <EntityTypeMapping TypeName="ABCModel.run_src_stats">
+              <MappingFragment StoreEntitySet="run_src_stats">
+                <ScalarProperty Name="run_src_stats_skey" ColumnName="run_src_stats_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="src_inst_skey" ColumnName="src_inst_skey" />
+                <ScalarProperty Name="run_job_det_stats_skey" ColumnName="run_job_det_stats_skey" />
+                <ScalarProperty Name="recs_prcs" ColumnName="recs_prcs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="run_tgt_stats">
+            <EntityTypeMapping TypeName="ABCModel.run_tgt_stats">
+              <MappingFragment StoreEntitySet="run_tgt_stats">
+                <ScalarProperty Name="run_tgt_stats_skey" ColumnName="run_tgt_stats_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="tgt_inst_skey" ColumnName="tgt_inst_skey" />
+                <ScalarProperty Name="run_job_det_stats_skey" ColumnName="run_job_det_stats_skey" />
+                <ScalarProperty Name="recs_prcs" ColumnName="recs_prcs" />
+                <ScalarProperty Name="prcs_typ" ColumnName="prcs_typ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="src_inst">
+            <EntityTypeMapping TypeName="ABCModel.src_inst">
+              <MappingFragment StoreEntitySet="src_inst">
+                <ScalarProperty Name="src_inst_skey" ColumnName="src_inst_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="job_det_skey" ColumnName="job_det_skey" />
+                <ScalarProperty Name="src_inst_nm" ColumnName="src_inst_nm" />
+                <ScalarProperty Name="src_inst_desc" ColumnName="src_inst_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="src_inst_xref">
+            <EntityTypeMapping TypeName="ABCModel.src_inst_xref">
+              <MappingFragment StoreEntitySet="src_inst_xref">
+                <ScalarProperty Name="src_inst_xref_skey" ColumnName="src_inst_xref_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="src_inst_skey" ColumnName="src_inst_skey" />
+                <ScalarProperty Name="inst_skey" ColumnName="inst_skey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="systs">
+            <EntityTypeMapping TypeName="ABCModel.syst">
+              <MappingFragment StoreEntitySet="syst">
+                <ScalarProperty Name="syst_skey" ColumnName="syst_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="syst_nm" ColumnName="syst_nm" />
+                <ScalarProperty Name="syst_desc" ColumnName="syst_desc" />
+                <ScalarProperty Name="db_nm" ColumnName="db_nm" />
+                <ScalarProperty Name="server_nm" ColumnName="server_nm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tgt_inst">
+            <EntityTypeMapping TypeName="ABCModel.tgt_inst">
+              <MappingFragment StoreEntitySet="tgt_inst">
+                <ScalarProperty Name="tgt_inst_skey" ColumnName="tgt_inst_skey" />
+                <ScalarProperty Name="aud_ins_id" ColumnName="aud_ins_id" />
+                <ScalarProperty Name="aud_upd_id" ColumnName="aud_upd_id" />
+                <ScalarProperty Name="aud_ins_tmstp" ColumnName="aud_ins_tmstp" />
+                <ScalarProperty Name="aud_upd_tmstp" ColumnName="aud_upd_tmstp" />
+                <ScalarProperty Name="actv_ind" ColumnName="actv_ind" />
+                <ScalarProperty Name="job_det_skey" ColumnName="job_det_skey" />
+                <ScalarProperty Name="inst_skey" ColumnName="inst_skey" />
+                <ScalarProperty Name="tgt_inst_nm" ColumnName="tgt_inst_nm" />
+                <ScalarProperty Name="tgt_inst_desc" ColumnName="tgt_inst_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
